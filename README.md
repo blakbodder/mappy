@@ -35,9 +35,9 @@ the MAP transfer.
 
 all the code here needs some information to work - namely the bd_addr
 of the idevice and the RFCOMM channel that the MAP service uses.
-turn on bluetooth.  in the pi terminal run 'hcitool scan'.  this gives the
+turn on bluetooth.  in the pi terminal run `hcitool scan`.  this gives the
 bd_addr of the ipad/iphone.  then execute  
-'sdptool browse --uuid 0x1134 <bd_addr>'
+`sdptool browse --uuid 0x1134 <bd_addr>`
 where <bd_addr> is the string of colon-separated hex digit pairs that
 identify your idevice.  in the output you should see RFCOMM, beneath
 which is the channel number you need.  patch this info into 
@@ -47,10 +47,10 @@ ma.py on its own does not do anything. it is used by the other progs.
 ma.py and mns.py use obx_const.py.
 
 pair idevice with raspberry before running the python scripts.
-mns.py should be preceded by 'sudo hciconfig hci0 piscan' and also
+mns.py should be preceded by `sudo hciconfig hci0 piscan` and also
 needs sudo privilege to advertise.
 
-## notte benne
+### notte benne
 the first time you run one of these progs on the pi, it will most
 likely fail with error "obex connect failed".  this is normal.
 to fix: on idevice go settings->bluetooth.  see the line that says
